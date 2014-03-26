@@ -27,11 +27,17 @@ Al principio del código se ven unas varibales donde puedes configurar las rutas
 
 
 `RutaLogsCarpetas` Es la ruta donde guardara el log de la copia de las carpetas.
+
 `RutaLogsBBD` Es la ruta para los logs de la copia de BBDD.
+
 `HOST` El host d etu base de datos (MySQL)
+
 `USER` El usuario para el acceso ala base de datos. (Cambia esto con los valores de tu user)
-`PASS` El password de acceso a la BBDD. (POn el que corresponda)
+
+`PASS` El password de acceso a la BBDD. (Pon el que corresponda)
+
 `BACKUP_DIR` La ruta donde se almacenarán las copias de tus BBDD.
+
 `RUTA_DISCO_BACKUP` Ruta de destino de la copia de tus archivos.
 
 
