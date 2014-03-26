@@ -1,16 +1,16 @@
 #!/bin/bash
 FECHA=$(date)
-RutaLogsCarpetas = /home/edu/xxxxx/Backups/logs_backups/Control_de_copias_CARPETAS
-RutaLogsBBDD = /home/edu/xxxxx/Backups/logs_backups/Control_de_copias
-HOST=localhost
-USER=root
-PASS=rasmysql
-BACKUP_DIR=/home/edu/xxxxx/Backups/Backups_MYSQL
-RUTA_DISCO_BACKUP = /media/88e2bfa8-bbc9-46d8-a34a-710eba5aa511/Seguridad_2014
+RUTA_LOGS_CARPETAS="/home/edu/xxxxx/Backups/logs_backups/Control_de_copias_CARPETAS"
+RUTA_LOGS_BBDD="/home/edu/xxxxx/Backups/logs_backups/Control_de_copias"
+HOST="localhost"
+USER="username"
+PASS="123456"
+BACKUP_DIR="/home/edu/xxxxx/Backups/Backups_MYSQL"
+RUTA_DISCO_BACKUP="/media/88e2bfa8-bbc9-46d8-a34a-710eba5aa511/Seguridad_2014"
 
 # Limpiamos los logs...
-rm $RutaLogsCarpetas
-rm $RutaLogsBBDD
+rm $RUTA_LOGS_CARPETAS
+rm $RUTA_LOGS_BBDD
 
 # Backup de MySQL
 MYSQL_DBS=$(mysqlshow -h $HOST -u $USER -p$PASS | awk ' (NR > 2) && (/[a-zA-Z0-9]+[ ]+[|]/) && ( $0 !~ /mysql/) { print $2 }');
@@ -19,7 +19,7 @@ for DB in $MYSQL_DBS ; do
   echo "* Copiando tu MySQL data from $DB@$HOST..."
   mysqldump -h $HOST -u $USER -p$PASS $DB > $BACKUP_DIR/mysql_$DB.sql
 
-echo "$FECHA --> $DB " >> $RutaLogsBBDD
+echo "$FECHA --> $DB " >> $RUTA_LOGS_BBDD
 done
 
 
@@ -46,9 +46,9 @@ cp -ruv  /home/edu/ $RUTA_DISCO_BACKUP
 cp -ruv  /var/www/ $RUTA_DISCO_BACKUP
 
 
-echo "$FECHA copiado edu y www " >> $RutaLogsCarpetas
-chmod -R 777 $RutaLogsBBDD
-chmod -R 777 $RutaLogsCarpetas
+echo "$FECHA - Realizada copia de seguridad " >> $RUTA_LOGS_CARPETAS
+chmod -R 777 $RUTA_LOGS_BBDD
+chmod -R 777 $RUTA_LOGS_CARPETAS
 echo "---------------------------------------------------------"
 echo "---------------------------------------------------------"
 echo "---------------------------------------------------------"
