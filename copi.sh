@@ -6,7 +6,6 @@ HOST=localhost
 USER=root
 PASS=rasmysql
 BACKUP_DIR=/home/edu/xxxxx/Backups/Backups_MYSQL
-
 RUTA_DISCO_BACKUP = /media/88e2bfa8-bbc9-46d8-a34a-710eba5aa511/Seguridad_2014
 
 # Limpiamos los logs...
