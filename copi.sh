@@ -1,11 +1,11 @@
 #!/bin/bash
 FECHA=$(date)
-RutaLogsCarpetas = /home/edu/Did-Web/Backups/logs_backups/Control_de_copias_CARPETAS
-RutaLogsBBDD = /home/edu/Did-Web/Backups/logs_backups/Control_de_copias
+RutaLogsCarpetas = /home/edu/xxxxx/Backups/logs_backups/Control_de_copias_CARPETAS
+RutaLogsBBDD = /home/edu/xxxxx/Backups/logs_backups/Control_de_copias
 HOST=localhost
 USER=root
 PASS=rasmysql
-BACKUP_DIR=/home/edu/Did-Web/Backups/Backups_MYSQL
+BACKUP_DIR=/home/edu/xxxxx/Backups/Backups_MYSQL
 
 RUTA_DISCO_BACKUP = /media/88e2bfa8-bbc9-46d8-a34a-710eba5aa511/Seguridad_2014
 
