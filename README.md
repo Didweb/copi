@@ -1,3 +1,68 @@
+Sicherungskopie: copi.sh
+===========================
+
+Es ist ein kleiner Code, den ich verwenden, um meine Backups zu machen.
+
+Es ist für die Sicherung auf einer zweiten Platte in meinem eigenen PC installiert gedacht
+
+Features
+------------------
+
+Kopieren Sie die Ordner, die Sie wollen, und machen auch eine Kopie für Ihre MySQL-Datenbank.
+
+Machen Sie ein Protokoll mit dem Datum der kopierten Ordner sowie die Datenbank.
+
+Konfigurieren
+-------------
+
+Zu Beginn des Codes können einige Variablen die Pfade festlegen, in denen das Ziel der Kopien und queires Laden, wo Protokolle sind
+
+	RutaLogsCarpetas = /home/edu/xxxxx/Backups/logs_backups/Control_de_copias_CARPETAS
+	RutaLogsBBDD = /home/edu/xxxxx/Backups/logs_backups/Control_de_copias
+	HOST=localhost
+	USER=root
+	PASS=123456
+	BACKUP_DIR=/home/edu/xxxxx/Backups/Backups_MYSQL
+	RUTA_DISCO_BACKUP = /media/88e2bfa8-bbc9-46d8-a34a-710eba5aa511/Seguridad_2014
+
+
+`RutaLogsCarpetas` Es ist der Pfad, in dem Sie die Protokollkopie Ordner speichern.
+
+`RutaLogsBBD` Es ist der Weg für Protokolle DB kopieren.
+
+`HOST` Die Host-Datenbank (MySQL)
+
+`USER` Der Benutzer Zugriff auf die Datenbank. (Ändern Sie diese mit den Werten Ihrer Benutzer)
+
+`PASS` Das Passwort, das auf die Datenbanken zugreifen. (Mit entsprechender)
+
+`BACKUP_DIR` Der Pfad, in dem Kopien Ihrer Datenbanken gespeichert sind.
+
+`RUTA_DISCO_BACKUP` Zielpfad der Kopie Ihrer Dateien.
+
+
+
+### Definieren Sie Ordner kopieren
+
+Sie können die Ordnerpfade Sie kopieren möchten definieren.
+
+	#----->>> Copia de archivos
+	# Define las carpetas que deseas copiar
+	cp -ruv  /home/edu/ $RUTA_DISCO_BACKUP
+	cp -ruv  /var/www/ $RUTA_DISCO_BACKUP
+
+
+Wo es in diesem Fall sagt `/ home / edu` und` / var / www /` sollten Sie die Ordner, die Sie kopieren queiras setzen. In diesem Fall gibt es zwei.
+
+
+### Lauf
+
+Laden Sie den Code, wo Sie wollen und einfach Zugriff auf sie von der Konsole.
+
+
+
+
+
 Copia de seguridad: copi.sh
 ===========================
 
